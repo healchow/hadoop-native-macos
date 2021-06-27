@@ -37,3 +37,24 @@ ISA-L:   false Loading ISA-L failed: Failed to load libisal.2.dylib (dlopen(libi
 ![hadoop-checknative](img/hadoop-checknative.png)
 
 其中报错是因为本地没有 snappy 压缩相关的库，暂时忽略。
+
+## 可用版本
+
+经自我测试，可用的版本如下（欢迎大家补充）：
+
+|     版本号     |   是否可用   |
+| :-----------: | :--------: |
+| hadoop-2.7.3  |     未知    |
+| hadoop-2.7.7  |     未知    |
+| hadoop-2.8.5  |     未知    |
+| hadoop-2.9.2  |     未知    |
+| hadoop-3.1.3  |     未知    |
+| hadoop-3.2.1  |  **可用**   |
+| ...           | ...        |
+
+
+## 参考仓库
+
+https://github.com/mingsquall/native-hadoop-library
+
+https://github.com/janlle/mac-hadoop-native-lib-mojove
