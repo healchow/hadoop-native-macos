@@ -1,0 +1,29 @@
+# Common
+*.class
+!.github/
+!.gitignore
+!.gitkeep
+!.travis.yml
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# macOS
+**/.DS_Store
+.java-version
+
+# VisualStudioCode
+.vscode/
+
+# Maven
+log/
+target/
+dist/
+
+# Gradle
+.gradle
+
+# Log
+.log
