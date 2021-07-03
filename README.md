@@ -26,8 +26,8 @@ bin/hadoop checknative -a
 Native library checking:
 hadoop:  true /Users/healchow/bigdata/hadoop-3.2.1/lib/native/libhadoop.dylib
 zlib:    true /usr/lib/libz.1.dylib
-zstd  :  false
-snappy:  false
+zstd  :  true /usr/local/Cellar/zstd/1.5.0/lib/libzstd.1.5.0.dylib
+snappy:  true /usr/local/Cellar/snappy/1.1.4/lib/libsnappy.1.dylib
 lz4:     true revision:10301
 bzip2:   false
 openssl: false EVP_CIPHER_CTX_reset
