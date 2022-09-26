@@ -1,4 +1,4 @@
-先编译安装 pb 2.5.0 版本:
+hadoop 2.x 需要先编译安装 pb 2.5.0 版本，hadoop 3.x 不需要:
 ```bash
 wget https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.bz2
 tar -xvjf protobuf-2.5.0.tar.bz2
@@ -57,6 +57,7 @@ export LIBRARY_PATH="$SDKROOT/usr/lib"
 
 ```bash
 mvn clean package -Pnative -DskipTests # 编译过程请保持**网络畅通**
+# mvn clean package -Pnative -DskipTests -Dos.arch=x86_64 # hadoop 3.x 用这个命令
 
 cp hadoop-common-project/hadoop-common/target/native/target/usr/local/lib/* $HADOOP_HOME/lib/native/
 cp hadoop-hdfs-project/hadoop-hdfs-native-client/target/native/target/usr/local/lib/* $HADOOP_HOME/lib/native/

@@ -37,14 +37,11 @@ openssl: false build does not support openssl.
 
 经自我测试，可用的版本如下（欢迎大家补充）：
 
-|     版本号     |   是否可用   |
+|     版本号    |   是否可用 |
 | :-----------: | :--------: |
-| hadoop-2.10.0  |  **可用**   |
+| hadoop-2.10.0 |  **可用**  |
+| hadoop-3.3.1  |  未知      |
+| hadoop-3.3.3  |  **可用**  |
+| hadoop-3.3.4  |  未知      |
 | ...           | ...        |
 
-
-## 参考仓库
-
-https://github.com/mingsquall/native-hadoop-library
-
-https://github.com/janlle/mac-hadoop-native-lib-mojove
