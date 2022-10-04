@@ -8,6 +8,8 @@ WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platfo
 using builtin-java classes where applicable
 ```
 
+当前目录的 hadoop-x.x.x 目录是为 Intel 系列芯片编译, m1、m2 系列芯片请使用 [ARM](ARM) 目录下的文件。
+
 ## 使用方法
 
 将 `hadoop-x.x.x/lib/native` 下的文件，替换到本地`${HADOOP_HOME}/lib/native` 中（删除原来的所有文件）。
