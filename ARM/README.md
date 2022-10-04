@@ -1,5 +1,5 @@
 
-# Hadoop Native Library for macOS
+# Hadoop Native Library for macOS (M1/M2)
 
 这个仓库提供了一些 macOS 系统下的 Hadoop 本地库，可以消除在 macOS 下运行 Hadoop 程序时的警告：
 
@@ -8,7 +8,7 @@ WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platfo
 using builtin-java classes where applicable
 ```
 
-当前目录是为 m1、m2 系列芯片编译([教程](build.md))，Intel 系列芯片请使用根目录文件。
+**当前目录专为 Apple M1 / M2 等 ARM 架构下的编译文件和[编译方法](build.md)，Intel 架构的编译文件，请使用项目根路径下的文件。**
 
 ## 使用方法
 
