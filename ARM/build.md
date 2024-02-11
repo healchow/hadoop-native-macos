@@ -34,7 +34,21 @@ protoc --version
 # libprotoc 2.5.0
 ```
 
-至此 PB 2.5.0 安装完成，接下来编译 Hadoop：
+至此 PB 2.5.0 安装完成。
+
+目前发现2.7.3版本还需要使用1.0.2版本的openssl进行编译（参考https://issues.apache.org/jira/browse/HADOOP-14597）
+
+通过以下命令安装1.0.2版本的openssl：
+```bash
+brew install rbenv/tap/openssl@1.0
+```
+
+安装完后在编译时需要使用设置1.0.2版本ssl的环境：
+```bash
+export PATH=/opt/homebrew/Cellar/openssl@1.0/1.0.2u:$PATH
+```
+
+至此 ssl 安装完成，开始编译hadoop
 
 ```bash
 git clone https://github.com/apache/hadoop.git
@@ -66,6 +80,10 @@ vim hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodema
 开始编译，过程中请保持网络畅通：
 ```bash
 mvn clean package -Pnative -DskipTests
+# hadoop 2.7.3 需要先设置ssl1.0.2环境
+# export PATH=/opt/homebrew/Cellar/openssl@1.0/1.0.2u:$PATH
+# 注意安装了snappy包可能会影响openssl的使用，因为构建命令中SNAP的库在更前面，导致会先找到homebrew中最新版的ssl库，从而无法使用旧版1.0.2的库，所以需要卸载掉snappy包
+
 # hadoop 3.x 用下面这个命令
 # mvn clean package -Pnative -DskipTests -Dos.arch=x86_64
 
@@ -78,5 +96,6 @@ sudo ln -s $(brew --prefix)/Cellar/zstd/1.5.2/lib/libzstd.1.dylib $JAVA_HOME/bin
 
 检查编译、安装结果：
 ```bash
+# 因为通过hadoop checknative -a检测结果可能无法检测成功，可以通过直接运行一个hdfs组件，观察是否有无法加载native library警告进行检测
 hadoop checknative -a
 ```
